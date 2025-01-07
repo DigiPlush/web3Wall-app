@@ -1,6 +1,9 @@
-'use client';
+"use client";
+
+import { ThirdwebProvider } from '@thirdweb-dev/react';
 import Sidebar from '../components/Sidebar';
 import Feed from '../components/home/Feed';
+
 
 
 const style = {
@@ -8,8 +11,11 @@ const style = {
   content: 'max-w-[1400px] w-2/3 flex justify-between',
 };
 
+
+
 export default function Home() {
   return (
+    <ThirdwebProvider>
     <div className={style.wrapper}>
       <div className={style.content}> 
         <Sidebar/>
@@ -17,5 +23,7 @@ export default function Home() {
         <h2>Widgets</h2>
       </div>
     </div>
+    </ThirdwebProvider>
+    
   );
 }

@@ -1,4 +1,4 @@
-import { FiMoreHorizontal } from "react-icons/fi";
+import { FiMoreHorizontal, FiMoreVertical } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
 import SidebarOption from "./SidebarOptions";
 import { useState } from "react";
@@ -47,7 +47,7 @@ function Sidebar(initialSelectedIcon = 'Home'){
                     setSelected={setSelected}
                     redirect={'/'}/>
                 <SidebarOption
-                    Icon={selected==='More' ? FiMoreHorizontal : FiMoreHorizontal}
+                    Icon={selected==='More' ? FiMoreHorizontal : FiMoreVertical}
                     text='Credits'
                     isActive={selected==='More'}
                     setSelected={setSelected}
