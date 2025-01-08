@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/layout.js", "src/app/page.js", "src/components/Sidebar.js", "src/components/SidebarOptions.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/layout.js", "src/app/page.js", "src/components/Sidebar.tsx", "src/components/SidebarOptions.tsx", "src/components/home/Feed.js"],
   "exclude": ["node_modules"]
 }

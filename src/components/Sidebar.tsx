@@ -20,8 +20,12 @@ const style = {
     moreContainer: `flex items-center mr-2`,
   }
 
-function Sidebar(initialSelectedIcon = 'Home'){
-    const [selected, setSelected] = useState(initialSelectedIcon);
+  interface SidebarProps {
+    initialSelectedIcon: string
+  }
+
+function Sidebar({initialSelectedIcon}: SidebarProps){
+    const [selected, setSelected] = useState<String>(initialSelectedIcon);
     return (
         <div className={style.wrapper}>
             <div className={style.homeIconContainer}>
@@ -31,25 +35,25 @@ function Sidebar(initialSelectedIcon = 'Home'){
                 <SidebarOption 
                     Icon={selected==='Home' ? RiHome2Fill : RiHome2Line}
                     text='Home' 
-                    isActive={selected==='Home'} 
+                    isActive={Boolean(selected==='Home')} 
                     setSelected={setSelected}
                     redirect={'/'}/>
                 <SidebarOption
                     Icon={selected==='Search' ? RiSearch2Fill : RiSearch2Line}
                     text='Search'
-                    isActive={selected==='Search'}
+                    isActive={Boolean(selected==='Search')}
                     setSelected={setSelected}
                     redirect={'/'}/>
                 <SidebarOption
                     Icon={selected==='Profile' ? RiProfileFill : RiProfileLine}
                     text='Profile'
-                    isActive={selected==='Profile'}
+                    isActive={Boolean(selected==='Profile')}
                     setSelected={setSelected}
                     redirect={'/'}/>
                 <SidebarOption
                     Icon={selected==='More' ? FiMoreHorizontal : FiMoreVertical}
                     text='Credits'
-                    isActive={selected==='More'}
+                    isActive={Boolean(selected==='More')}
                     setSelected={setSelected}
                     redirect={'/'}/>
                 <div className={style.postButton}>Say Something</div>

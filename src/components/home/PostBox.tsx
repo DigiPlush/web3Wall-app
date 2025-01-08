@@ -19,7 +19,7 @@ const style = {
   const PostBox = () => {
     const [postMessage, setPostMessage] = useState('');
 
-    const submitPost = (event) => {
+    const submitPost = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
 
         if(!postMessage) return;
