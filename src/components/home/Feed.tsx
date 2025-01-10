@@ -13,9 +13,9 @@ import Loading from "../Loading";
 
 
 const style = {
-    wrapper: `flex-[2] bg-[#242936] border-r border-l border-black overflow-y-scroll`,
-    header: `sticky top-0  z-10 p-4 flex justify-between items-center`,
-    headerTitle: `text-xl font-bold`,
+    wrapper: 'flex-[2] flex-col bg-[#242936] border-r border-l border-black overflow-y-scroll',
+    header: 'sticky top-0  z-10 p-4 flex justify-between items-center',
+    headerTitle: 'text-xl font-bold',
     loading: 'h-16 w-16 mx-auto',
   }
 
@@ -26,8 +26,6 @@ const contract = getContract({
 });
 
 function Feed() {
-
-    
 
     const preparedEvent = prepareEvent({ 
       signature: "event StatusUpdated(address indexed user, string newStatus, uint256 timestamp)",

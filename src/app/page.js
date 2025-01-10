@@ -1,13 +1,14 @@
 "use client";
 
-import Sidebar from '../components/Sidebar';
-import Feed from '../components/home/Feed';
+import Connexion from '@/components/Connexion';
+import Sidebar from '@/components/Sidebar';
+import Feed from '@/components/home/Feed';
 
 
 
 const style = {
   wrapper: 'flex justify-center h-screen w-screen select-none bg-[#1F2430] text-white',
-  content: 'max-w-[1400px] w-2/3 flex justify-between',
+  content: 'max-w-[1600px] w-4/5 flex justify-between',
 };
 
 
@@ -19,7 +20,7 @@ export default function Home() {
       <div className={style.content}> 
         <Sidebar/>
         <Feed/>
-        <h2>Widgets</h2>
+        <Connexion/>
       </div>
     </div>
     
