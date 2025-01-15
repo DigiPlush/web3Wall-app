@@ -18,44 +18,44 @@ const style = {
     name: 'text-lg',
     handle: 'text-[#8899a6]',
     moreContainer: 'flex items-center mr-2',
-  }
+}
 
-  interface SidebarProps {
+interface SidebarProps {
     initialSelectedIcon: string
-  }
+}
 
-function Sidebar({initialSelectedIcon}: SidebarProps){
+function Sidebar({ initialSelectedIcon }: SidebarProps) {
     const [selected, setSelected] = useState<String>(initialSelectedIcon);
     return (
         <div className={style.wrapper}>
             <div className={style.homeIconContainer}>
-                <AiFillStar/>
+                <AiFillStar />
             </div>
             <div className={style.navContainer}>
-                <SidebarOption 
-                    Icon={selected==='Home' ? RiHome2Fill : RiHome2Line}
-                    text='Home' 
-                    isActive={Boolean(selected==='Home')} 
-                    setSelected={setSelected}
-                    redirect={'/'}/>
                 <SidebarOption
-                    Icon={selected==='Search' ? RiSearch2Fill : RiSearch2Line}
+                    Icon={selected === 'Home' ? RiHome2Fill : RiHome2Line}
+                    text='Home'
+                    isActive={Boolean(selected === 'Home')}
+                    setSelected={setSelected}
+                    redirect={'/'} />
+                <SidebarOption
+                    Icon={selected === 'Search' ? RiSearch2Fill : RiSearch2Line}
                     text='Search'
-                    isActive={Boolean(selected==='Search')}
+                    isActive={Boolean(selected === 'Search')}
                     setSelected={setSelected}
-                    redirect={'/'}/>
+                    redirect={'/'} />
                 <SidebarOption
-                    Icon={selected==='Profile' ? RiProfileFill : RiProfileLine}
+                    Icon={selected === 'Profile' ? RiProfileFill : RiProfileLine}
                     text='Profile'
-                    isActive={Boolean(selected==='Profile')}
+                    isActive={Boolean(selected === 'Profile')}
                     setSelected={setSelected}
-                    redirect={'/'}/>
+                    redirect={'/'} />
                 <SidebarOption
-                    Icon={selected==='More' ? FiMoreHorizontal : FiMoreVertical}
+                    Icon={selected === 'More' ? FiMoreHorizontal : FiMoreVertical}
                     text='Credits'
-                    isActive={Boolean(selected==='More')}
+                    isActive={Boolean(selected === 'More')}
                     setSelected={setSelected}
-                    redirect={'/'}/>
+                    redirect={'/'} />
                 <div className={style.postButton}>Say Something</div>
             </div>
             <div className={style.profileButton}>
@@ -66,11 +66,11 @@ function Sidebar({initialSelectedIcon}: SidebarProps){
                         <div className={style.handle}>@yourhandle</div>
                     </div>
                     <div className={style.moreContainer}>
-                        <FiMoreHorizontal/>
+                        <FiMoreHorizontal />
                     </div>
                 </div>
             </div>
-                    
+
         </div>
     )
 }
