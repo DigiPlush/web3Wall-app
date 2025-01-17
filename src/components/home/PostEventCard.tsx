@@ -25,7 +25,7 @@ export default function PostEventCard({ walletAddress, newStatus, timestamp }: P
         <div className={style.wrapper}>
             <div className={style.postBody}>
                 <div className={style.postHeader}>
-                    <Link href={'/account/${walletAddress}'}>
+                <Link href={`account/${walletAddress}`}>
                         <p className={style.address}>{truncateAddress(walletAddress)}</p>
                     </Link>
                     <p className={style.date}>{date.toLocaleDateString()}</p>

@@ -1,9 +1,8 @@
 import PostBox from "./PostBox";
 import { useContractEvents } from "thirdweb/react";
-import { STATUS_CONTRACT_ADDRESS, statusContract } from "@/constants/contracts";
+import { statusContract } from "@/constants/contracts";
 import  PostEventCard  from "./PostEventCard";
-
-import { createThirdwebClient, getContract, prepareEvent,} from "thirdweb";
+import { prepareEvent,} from "thirdweb";
 import Loading from "../Loading";
 
 
@@ -25,6 +24,7 @@ function Feed() {
     const { data: statusEvents, isLoading: isStatusEventsLoading,} = useContractEvents({
       contract,
       events: [preparedEvent],
+      blockRange: 100000,
     }); 
 
 
