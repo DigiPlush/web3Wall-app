@@ -56,4 +56,4 @@ npm run build
 
 ## Acknowledgements
 
-- [ThirdWeb](thirdweb.com) for their web3 development platform, making it easier to deploy my contracts and interact with it on the app
+- [ThirdWeb](https://thirdweb.com) for their web3 development platform, making it easier to deploy my contracts and interact with it on the app
