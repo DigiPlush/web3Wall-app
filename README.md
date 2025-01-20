@@ -11,7 +11,7 @@ Web3Wall is a sample WebApp acting as a forum (or Twitter lookalike) where posts
 
 ## Chain & Contract
 
-The code is actually set up to use the following: 
+The code is currently set up to use the following: 
 
 - **Chain :** Amoy
 - **Contract :** 0x9957A3b7f91357f5411Cf3E4e71a585344C5A6f9
