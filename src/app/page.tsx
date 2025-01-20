@@ -18,7 +18,7 @@ export default function Home() {
     
     <div className={style.wrapper}>
       <div className={style.content}> 
-        <Sidebar/>
+        <Sidebar initialSelectedIcon={"Home"}/>
         <Feed/>
         <Connexion/>
       </div>

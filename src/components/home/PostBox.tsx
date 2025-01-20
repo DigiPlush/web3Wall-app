@@ -9,7 +9,7 @@ const style = {
   postBoxLeft: 'mr-4',
   postBoxRight: 'flex-1',
   profileImage: 'height-12 w-12 rounded-full',
-  inputField: 'w-full h-full outline-none bg-transparent text-lg',
+  inputField: 'block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500',
   formLowerContainer: 'flex',
   iconsContainer: 'text-[#1d9bf0] flex flex-1 items-center',
   icon: 'mr-2',
@@ -54,6 +54,7 @@ const PostBox = () => {
     <div className={style.postBoxRight}>
       <form>
         <textarea
+          
           className={style.inputField}
           placeholder="Share a thought onchain..."
           value={postMessage} onChange={(e) => setPostMessage(e.target.value)} />

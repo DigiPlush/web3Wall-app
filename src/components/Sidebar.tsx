@@ -3,6 +3,7 @@ import { AiFillStar } from "react-icons/ai";
 import SidebarOption from "./SidebarOptions";
 import { useState } from "react";
 import { RiHome2Fill, RiHome2Line, RiProfileFill, RiProfileLine, RiSearch2Fill, RiSearch2Line } from "react-icons/ri";
+import { useActiveAccount } from "thirdweb/react";
 
 
 const style = {
@@ -26,6 +27,7 @@ interface SidebarProps {
 
 function Sidebar({ initialSelectedIcon }: SidebarProps) {
     const [selected, setSelected] = useState<String>(initialSelectedIcon);
+    const  activeAddress  = useActiveAccount();
     return (
         <div className={style.wrapper}>
             <div className={style.homeIconContainer}>
@@ -37,26 +39,26 @@ function Sidebar({ initialSelectedIcon }: SidebarProps) {
                     text='Home'
                     isActive={Boolean(selected === 'Home')}
                     setSelected={setSelected}
-                    redirect={'/'} />
+                    redirectAddress={'/'} />
                 <SidebarOption
                     Icon={selected === 'Search' ? RiSearch2Fill : RiSearch2Line}
                     text='Search'
                     isActive={Boolean(selected === 'Search')}
                     setSelected={setSelected}
-                    redirect={'/'} />
+                    redirectAddress={'/search'} />
                 <SidebarOption
                     Icon={selected === 'Profile' ? RiProfileFill : RiProfileLine}
                     text='Profile'
                     isActive={Boolean(selected === 'Profile')}
                     setSelected={setSelected}
-                    redirect={'/'} />
+                    redirectAddress={`/account/${activeAddress?.address}`} />
                 <SidebarOption
                     Icon={selected === 'More' ? FiMoreHorizontal : FiMoreVertical}
                     text='Credits'
                     isActive={Boolean(selected === 'More')}
                     setSelected={setSelected}
-                    redirect={'/'} />
-                <div className={style.postButton}>Say Something</div>
+                    redirectAddress={'/'} />
+                
             </div>
             <div className={style.profileButton}>
                 <div className={style.profileLeft}></div>

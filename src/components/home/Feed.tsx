@@ -24,7 +24,7 @@ function Feed() {
     const { data: statusEvents, isLoading: isStatusEventsLoading,} = useContractEvents({
       contract,
       events: [preparedEvent],
-      blockRange: 100000,
+      blockRange: 10000000,
     }); 
 
 

@@ -1,4 +1,4 @@
-import { useRouter } from "next/compat/router"
+import { redirect } from "next/navigation"
 import { Dispatch, SetStateAction } from "react"
 import { IconType } from "react-icons"
 
@@ -15,11 +15,10 @@ const style = {
     Icon: IconType
     isActive?: Boolean
     setSelected?: Dispatch<SetStateAction<String>>
-    redirect?: string | URL
+    redirectAddress?: string
   }
 
-function SidebarOption({text, Icon, isActive, setSelected, redirect}: SidebarOptionProps){
-    const router = useRouter();
+function SidebarOption({text, Icon, isActive, setSelected, redirectAddress}: SidebarOptionProps){
 
     const handleClick = (buttonText = text) => {
         if(setSelected){
@@ -32,8 +31,8 @@ function SidebarOption({text, Icon, isActive, setSelected, redirect}: SidebarOpt
         <div className={style.wrapper} 
         onClick={() => {
             handleClick(text);
-            if (router && redirect){
-                router.push(redirect);
+            if (redirectAddress){
+                redirect(redirectAddress);
             }else return;
         }}>
 

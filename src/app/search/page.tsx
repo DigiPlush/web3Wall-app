@@ -1,9 +1,8 @@
 'use client';
-import { useParams } from "next/navigation";
 
 import Sidebar from "@/components/Sidebar";
 import Connexion from "@/components/Connexion";
-import ProfileFeed from "@/components/ProfileFeed";
+import SearchBar from "@/components/SearchBar";
 
 const style = {
   wrapper: 'flex justify-center h-screen w-screen select-none bg-[#1F2430] text-white',
@@ -11,16 +10,12 @@ const style = {
 };
 
 export default function Profile() {
-  const { walletAddress } = useParams<{ walletAddress: string }>();
-  
-
- 
 
   return (
     <div className={style.wrapper}>
       <div className={style.content}> 
-        <Sidebar initialSelectedIcon={"Profile"}/>
-        <ProfileFeed address={walletAddress}/>
+        <Sidebar initialSelectedIcon={"Search"}/>
+        <SearchBar/>
         <Connexion/>
       </div>
     </div>
